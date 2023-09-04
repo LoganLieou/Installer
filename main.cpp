@@ -5,17 +5,17 @@
 #include <string>
 
 #if defined(_WIN32) || defined(_WIN64)
-    string delim =  "\\";
-    string path = "%userprofile%\\AppData\\Roaming\\.minecraft\\";
-    string cp = "xcopy";
+    std::string delim =  "\\";
+    std::string path = "%userprofile%\\AppData\\Roaming\\.minecraft\\";
+    std::string cp = "xcopy";
 #elif defined(__APPLE__) && defined(__MACH__)
     std::string delim = "/";
     std::string path = "~/Library/Application\\ Support/minecraft/";
     std::string cp = "cp";
 #else
-    string delim = "/";
-    string path = "~/.minecraft/";
-    string cp = "cp";
+    std::string delim = "/";
+    std::string path = "~/.minecraft/";
+    std::string cp = "cp";
 #endif
 
 bool folderExists(std::string folderPath) 
@@ -24,7 +24,8 @@ bool folderExists(std::string folderPath)
     return stat(folderPath.c_str(), &info) == 0 && (info.st_mode & S_IFDIR);
 }
 
-int main(void)
+// imagine writing safe code
+int main()
 {
     system("java -jar forge.jar");
 
