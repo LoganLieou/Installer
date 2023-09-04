@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="forge">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/forge.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
